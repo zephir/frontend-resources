@@ -1,0 +1,5 @@
+@mixin z-better-text-rendering {
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+}

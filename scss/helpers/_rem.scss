@@ -1,0 +1,8 @@
+@function z-rem($size) {
+    @return 1rem * ( strip-unit($size) / strip-unit($z-root-font-size) );
+}
+
+@mixin z-rem($size) {
+    font-size: $size;
+    font-size: z-rem(size);
+}
