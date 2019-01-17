@@ -1,6 +1,6 @@
 @mixin z-media-down($breakpoint) {
     @if (type_of($breakpoint) == 'string') {
-        $breakpoint: map_get($breakpoints, $breakpoint);
+        $breakpoint: map_get($z-breakpoints, $breakpoint);
     }
 
     @media (max-width: em($breakpoint - 1)) {
@@ -10,7 +10,7 @@
 
 @mixin z-media-up($breakpoint) {
     @if (type_of($breakpoint) == 'string') {
-        $breakpoint: map_get($breakpoints, $breakpoint);
+        $breakpoint: map_get($z-breakpoints, $breakpoint);
     }
 
     @media (min-width: em($breakpoint)) {
@@ -20,10 +20,10 @@
 
 @mixin z-media-between($breakpoint-min, $breakpoint-max) {
     @if (type_of($breakpoint-min) == 'string') {
-        $breakpoint-min: map_get($breakpoints, $breakpoint-min);
+        $breakpoint-min: map_get($z-breakpoints, $breakpoint-min);
     }
     @if (type_of($breakpoint-max) == 'string') {
-        $breakpoint-max: map_get($breakpoints, $breakpoint-max);
+        $breakpoint-max: map_get($z-breakpoints, $breakpoint-max);
     }
 
     @media (min-width: em($breakpoint-min)) and (max-width: em($breakpoint-max)) {
