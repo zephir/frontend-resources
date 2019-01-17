@@ -1,5 +1,5 @@
 @function z-rem($size) {
-    @return 1rem * ( strip-unit($size) / strip-unit($z-root-font-size) );
+    @return 1rem * ( z-strip-unit($size) / z-strip-unit($z-root-font-size) );
 }
 
 @mixin z-rem($size) {
