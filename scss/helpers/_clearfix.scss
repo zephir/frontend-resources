@@ -1,0 +1,7 @@
+@mixin z-clearfix() {
+    &:after {
+        display: table;
+        clear: both;
+        content: '';
+    }
+}

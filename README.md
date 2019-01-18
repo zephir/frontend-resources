@@ -44,6 +44,7 @@ Mixins
 |`z-media-down`|Adds the mediaquery mixins. These will use the `$z-breakpoints` map but can also accept regular pixel values.||
 |`z-media-between`|Adds the mediaquery mixins. These will use the `$z-breakpoints` map but can also accept regular pixel values.||
 |`z-better-text-rendering`|Include this in your body for better/smoother font rendering.|`@include z-better-text-rendering;`|
+|`z-clearfix`|Include this to clear floats and prevent following elements to flow around the previous floating element.|`@include z-clearfix();`|
 
 ## Normalize
 
