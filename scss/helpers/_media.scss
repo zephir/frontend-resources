@@ -3,7 +3,7 @@
         $breakpoint: map_get($z-breakpoints, $breakpoint);
     }
 
-    @media (max-width: em($breakpoint - 1)) {
+    @media (max-width: z-em($breakpoint - 1)) {
         @content;
     }
 }
@@ -13,7 +13,7 @@
         $breakpoint: map_get($z-breakpoints, $breakpoint);
     }
 
-    @media (min-width: em($breakpoint)) {
+    @media (min-width: z-em($breakpoint)) {
         @content;
     }
 }
@@ -26,7 +26,7 @@
         $breakpoint-max: map_get($z-breakpoints, $breakpoint-max);
     }
 
-    @media (min-width: em($breakpoint-min)) and (max-width: em($breakpoint-max)) {
+    @media (min-width: z-em($breakpoint-min)) and (max-width: z-em($breakpoint-max)) {
         @content;
     }
 }

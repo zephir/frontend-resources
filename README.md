@@ -31,7 +31,8 @@ Functions
 
 |Function|Description|Example|
 |--------|-----------|------|
-|`z-rem`|The mixin will automatically provide a px fallback for the rem value, example output of the mixin.|Adds a `z-rem(20px)` function and a mixin `@include z-rem(20px)`.|
+|`z-rem`|Returns the calculated rem value based on the given pixel value and the `$z-root-font-size`. The mixin that's provided also adds a pixel fallback if used.|Adds a `z-rem(20px)` function and a mixin `@include z-rem(20px)`.|
+|`z-em`|Returns the calculated em value based on given pixel value and parent font size. If no parent font size is given it uses the `$z-root-font-size` variable.|Adds a `z-em(20px, 24px)` function.|
 |`z-strip-unit`|strips a given unit (for example px) from a value.|`z-strip-unit(20px)`|
 |`z-xdem-to-rem`|function can calculate the rem value based on EM values given by XD. This function is especially useful if you have to define letter spacing that was defined in a XD file. The first param equals the letter spacing in XD and the second parameter has to be the current font-size in px.|`z-xdem-to-rem(20, 20px)`|
 

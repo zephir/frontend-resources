@@ -4,7 +4,12 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## 1.2.0 (in progress)
+## 1.3.0 (in progress)
+
+## 1.2.0 (24. January 2019)
+
++ Added z-em() function
++ Fixed z-media-* functions
 
 ## 1.1.0 (21. January 2019)
 
