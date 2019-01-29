@@ -1,8 +1,22 @@
 @function z-rem($size) {
+    @if $size == 0 {
+        @return 0;
+    }
+
     @return 1rem * ( z-strip-unit($size) / z-strip-unit($z-root-font-size) );
 }
 
-@mixin z-rem($size) {
-    font-size: $size;
-    font-size: z-rem(size);
+@mixin z-rem($value, $property: 'font-size') {
+    $remValue: null;
+    
+    @if type-of($value) == 'list' {
+        @each $loopValue in $value {
+            $remValue: append($remValue, z-rem($loopValue));
+        }
+    } @else {
+        $remValue: z-rem($value);
+    }
+
+    #{$property}: $value; // Regular px (fallback)
+    #{$property}: $remValue; // In rem
 }

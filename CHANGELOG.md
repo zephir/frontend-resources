@@ -4,7 +4,19 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## 1.3.0 (in progress)
+## 2.0.0 (29. January 2019)
+
+### Changed
+
++ Renamed "zephir.scss" to a more meaningful "helpers.scss". See [UPGRADE Document](UPGRADE.md) for more informations.
+
+### Added
+
++ Unit tests
+
+### Fixed
+
++ Fixed wrong function names in xdem-to-rem function
 
 ## 1.2.0 (24. January 2019)
 
