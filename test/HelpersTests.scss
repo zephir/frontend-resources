@@ -2,10 +2,6 @@
 @import "../scss/variables";
 @import "../scss/helpers";
 
-.test {
-    @include z-rem(5px 5px 0 0, 'margin');
-}
-
 // ==================================================
 // Strip unit function
 // ==================================================
@@ -65,6 +61,12 @@
         @include assert-equal(
             z-rem(16px),
             1rem
+        );
+    }
+    @include test('Calculate rem for 10px 10px 10px 0.') {
+        @include assert-equal(
+            z-rem(10px 10px 10px 0),
+            0.625rem 0.625rem 0.625rem 0
         );
     }
 }

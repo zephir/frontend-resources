@@ -1,22 +1,29 @@
-@function z-rem($size) {
-    @if $size == 0 {
+@function z-rem($value) {
+    @if $value == 0 {
         @return 0;
     }
 
-    @return 1rem * ( z-strip-unit($size) / z-strip-unit($z-root-font-size) );
-}
-
-@mixin z-rem($value, $property: 'font-size') {
     $remValue: null;
     
     @if type-of($value) == 'list' {
         @each $loopValue in $value {
-            $remValue: append($remValue, z-rem($loopValue));
+
+            // Prevent "null" from existing in list
+            @if $remValue == null {
+                $remValue: z-rem($loopValue);
+            } @else {
+                $remValue: append($remValue, z-rem($loopValue));
+            }
+
         }
     } @else {
-        $remValue: z-rem($value);
+        $remValue: 1rem * ( z-strip-unit($value) / z-strip-unit($z-root-font-size) );
     }
 
+    @return $remValue;
+}
+
+@mixin z-rem($value, $property: 'font-size') {
     #{$property}: $value; // Regular px (fallback)
-    #{$property}: $remValue; // In rem
+    #{$property}: z-rem($value); // In rem
 }
