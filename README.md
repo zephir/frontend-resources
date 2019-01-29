@@ -14,7 +14,7 @@ Usage:
 
 ```
 @import "vendor/zephir/frontend-resources/scss/normalize";
-@import "vendor/zephir/frontend-resources/scss/zephir";
+@import "vendor/zephir/frontend-resources/scss/helpers";
 ```
 
 ## SCSS
