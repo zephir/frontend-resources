@@ -4,6 +4,8 @@
 
 # Zephir Frontend Resources
 
+[![Build Status](https://travis-ci.org/zephir/frontend-resources.svg?branch=master)](https://travis-ci.org/zephir/frontend-resources)
+
 Installation:
 
 ```sh
