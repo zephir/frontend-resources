@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.0.2 (31. January 2019)
+
++ Added sassdoc comments (http://zephir.github.io/frontend-resources)
++ Added function `z-invert-value`.
++ Added function `z-escape-number`.
+
 ## 2.0.1 (29. January 2019)
 
 + Updated z-rem to work with multiple values (for example `z-rem(10px 0 0 10px)`).
