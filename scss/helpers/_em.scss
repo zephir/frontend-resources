@@ -24,7 +24,7 @@
 
         }
     } @else {
-        $emValue: 1rem * ( z-strip-unit($value) / z-strip-unit($parent-size) );
+        $emValue: 1em * ( z-strip-unit($value) / z-strip-unit($parent-size) );
     }
 
     @return $emValue;
