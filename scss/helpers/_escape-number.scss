@@ -1,0 +1,22 @@
+/// This function escapes numbers that will be used as class names.
+/// @author Marc
+/// @param {number} $number The number that should be escaped.
+/// @return {number} Escaped number.
+/// @example scss
+/// $escaped: z-escape-numer(1) // results in \31
+/// $escaped: z-escape-numer(10) // results in \31 0
+/// $escaped: z-escape-numer(333) // results in \33 33
+///
+@function z-escape-number($number) {
+    $number: '#{$number}';
+    $newNumber: '';
+    
+    @if str-length($number) >= 2 {
+        $number: str-insert($number, ' ', 2);
+        $number: \3#{$number};
+    } @else {
+        $number: \3#{$number};
+    }
+
+    @return $number;
+}

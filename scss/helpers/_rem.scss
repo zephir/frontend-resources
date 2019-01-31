@@ -1,3 +1,9 @@
+/// Converts given value or value list from px to rem (based on `$z-root-font-size`).
+/// @author Marc
+/// @require {function} z-strip-unit
+/// @require {variable} $z-root-font-size
+/// @param {number|list} $value Value or value list to convert.
+/// @return {number} Converted values in rem.
 @function z-rem($value) {
     @if $value == 0 {
         @return 0;
@@ -23,6 +29,19 @@
     @return $remValue;
 }
 
+/// Mixin to convert px to rem and provide a px fallback.
+/// @author Marc
+/// @require {function} z-rem
+/// @param {number|list} $value Value or value list to remove unit from.
+/// @param {string} $property ['font-size'] The property that should be set.
+/// @example scss - Set font-size and margin to 20px and 20rem
+///   @include z-rem(20px);
+///   @include z-rem(20px, 'margin');
+/// @output Outputs property and value in px and rem.
+///   ```scss
+///     font-size: 16px
+///     font-size: 1rem
+///   ```
 @mixin z-rem($value, $property: 'font-size') {
     #{$property}: $value; // Regular px (fallback)
     #{$property}: z-rem($value); // In rem

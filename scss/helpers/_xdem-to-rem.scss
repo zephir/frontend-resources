@@ -1,3 +1,10 @@
+/// Converts the `em` values from XD (letter-spacing) to rem, based on the current fontSize.
+/// @author Marc
+/// @require {function} z-rem
+/// @require {function} z-strip-unit
+/// @param {number} $xdEm The value from Adobe XD, letter-spacing for example
+/// @param {number} $fontSize The current font-size in **px**.
+/// @return {number} Rem value.
 @function z-xdem-to-rem($xdEm, $fontSize) {
     @return z-rem(z-strip-unit($fontSize) * (z-strip-unit($xdEm) / 1000));
 }

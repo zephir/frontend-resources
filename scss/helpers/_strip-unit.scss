@@ -1,7 +1,11 @@
-// Remove the unit of a length
-// @param {Number} $number - Number to remove unit from
-// @return {Number} - Unitless number
-
+/// Strips the unit (px, rem ...) from the given value.
+/// @author Marc
+/// @param {number} $number Number to remove unit from.
+/// @return {number} Unitless number
+/// 
+/// @example scss - Returns 20.
+///   $unitless: z-strip-unit(20px);
+///
 @function z-strip-unit($number) {
     @if type-of($number) == 'number' and not unitless($number) {
         @return $number / ($number * 0 + 1);

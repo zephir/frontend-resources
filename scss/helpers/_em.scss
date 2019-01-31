@@ -1,5 +1,31 @@
-$root-font-size: 16px !default;
+/// Converts given value or value list from px to em.
+/// @author Marc
+/// @require {function} z-strip-unit
+/// @require {variable} $z-root-font-size
+/// @param {number|list} $value Value or value list to convert.
+/// @param {number} $value [$z-root-font-size] Parent font-size.
+/// @return {number} Converted values in em.
+@function z-em($value, $parent-size: $z-root-font-size) {
+    @if $value == 0 {
+        @return 0;
+    }
 
-@function z-em($size, $parent-size: $root-font-size) {
-    @return 1em * ( z-strip-unit($size) / z-strip-unit($parent-size) );
+    $emValue: null;
+    
+    @if type-of($value) == 'list' {
+        @each $loopValue in $value {
+
+            // Prevent "null" from existing in list
+            @if $emValue == null {
+                $emValue: z-em($loopValue, $parent-size);
+            } @else {
+                $emValue: append($emValue, z-em($loopValue, $parent-size));
+            }
+
+        }
+    } @else {
+        $emValue: 1rem * ( z-strip-unit($value) / z-strip-unit($parent-size) );
+    }
+
+    @return $emValue;
 }

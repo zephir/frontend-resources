@@ -1,0 +1,29 @@
+
+/// Inverts given value or value list.
+/// @author Marc
+/// @param {number|list} $value The number or value list that should be inverted.
+/// @return {number} Inverted number or value list.
+/// @example scss
+///   $inverted: z-invert-value(20) // results in -20
+///
+@function z-invert-value($value) {
+    $currentValue: null;
+    
+    @if type-of($value) == list {
+        @each $loopValue in $value {
+            @if $loopValue != 0 {
+                $loopValue: -$loopValue;
+            }
+
+            @if $currentValue == null {
+                $currentValue: $loopValue;
+            } @else {
+                $currentValue: append($currentValue, $loopValue);
+            }
+        }
+    } @else {
+        @return -$value;
+    }
+
+    @return $currentValue;
+}

@@ -1,3 +1,22 @@
+/// Mixin for @media (max-width).
+/// @author Marc
+/// @require {function} z-em
+/// @require {variable} z-breakpoints
+/// @param {number|string} $breakpoint Either a **px** value or the name of a breakpoint available in `$z-breakpoints`.
+/// @example scss - Include a max-width query for 500px.
+///   @include z-media-down(500px) {
+///       .test {
+///           color: green;
+///       }
+///   }
+/// @output Outputs a max-width media query.
+///   ```scss
+///   @media (max-width: 31.1875em) {
+///       .test {
+///           color: green;
+///       }
+///   }
+///   ```
 @mixin z-media-down($breakpoint) {
     @if (type_of($breakpoint) == 'string') {
         $breakpoint: map_get($z-breakpoints, $breakpoint);
@@ -8,6 +27,25 @@
     }
 }
 
+/// Mixin for @media (min-width).
+/// @author Marc
+/// @require {function} z-em
+/// @require {variable} z-breakpoints
+/// @param {number|string} $breakpoint Either a **px** value or the name of a breakpoint available in `$z-breakpoints`.
+/// @example scss - Include a min-width query for 500px.
+///   @include z-media-up(500px) {
+///       .test {
+///           color: green;
+///       }
+///   }
+/// @output Outputs a min-width media query.
+///   ```scss
+///   @media (min-width: 31.25em) {
+///       .test {
+///           color: green;
+///       }
+///   }
+///   ```
 @mixin z-media-up($breakpoint) {
     @if (type_of($breakpoint) == 'string') {
         $breakpoint: map_get($z-breakpoints, $breakpoint);
@@ -18,6 +56,26 @@
     }
 }
 
+/// Mixin for @media (min-width and max-width).
+/// @author Marc
+/// @require {function} z-em
+/// @require {variable} z-breakpoints
+/// @param {number|string} $breakpoint-min Either a **px** value or the name of a breakpoint available in `$z-breakpoints`.
+/// @param {number|string} $breakpoint-max Either a **px** value or the name of a breakpoint available in `$z-breakpoints`.
+/// @example scss - Include a media query between 500px and 1000px
+///   @include z-media-between(500px, 1000px) {
+///       .test {
+///           color: green;
+///       }
+///   }
+/// @output Outputs a min- and max-width media query.
+///   ```scss
+///   @media (min-width: 31.25em) and (max-width: 62.4375em) {
+///       .test {
+///           color: green;
+///       }
+///   }
+///   ```
 @mixin z-media-between($breakpoint-min, $breakpoint-max) {
     @if (type_of($breakpoint-min) == 'string') {
         $breakpoint-min: map_get($z-breakpoints, $breakpoint-min);
@@ -26,7 +84,7 @@
         $breakpoint-max: map_get($z-breakpoints, $breakpoint-max);
     }
 
-    @media (min-width: z-em($breakpoint-min)) and (max-width: z-em($breakpoint-max)) {
+    @media (min-width: z-em($breakpoint-min)) and (max-width: z-em($breakpoint-max - 1)) {
         @content;
     }
 }

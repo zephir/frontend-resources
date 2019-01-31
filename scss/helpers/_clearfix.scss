@@ -1,3 +1,17 @@
+/// Clearfix for daaaays!
+/// @author Marc
+/// @example scss - Clearfix the element.
+///   .clearfix-this {
+///       @include z-clearfix;
+///   }
+/// @output Adds the ::after table clearfix.
+///   ```scss
+///   .clearfix-this::after {
+///       display: table;
+///       clear: both;
+///       content: '';
+///   }
+///   ```
 @mixin z-clearfix() {
     &:after {
         display: table;

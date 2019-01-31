@@ -1,7 +1,12 @@
+/// The root font-size, all browsers use 16px as base font-size.
+/// @type number
 $z-root-font-size: 16px !default;
 
+/// The breakpoints available to the z-media-* mixins.  
+/// Use px to specify the window width for each breakpoint.
+/// @type map
 $z-breakpoints: (
-    tapo: 768px,     // Tablet-portrait
-    taho: 1024px,    // Tablet-horizontal
-    desk: 1920px,    // Desktop
+    tapo: 768px,  // Tablet-portrait
+    taho: 1024px, // Tablet-horizontal
+    desk: 1920px, // Desktop
 ) !default;

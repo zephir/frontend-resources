@@ -1,3 +1,15 @@
+/// Enabled box-sizing, because why not? o_O
+/// @author Marc
+/// @example scss - Enables box-sizing for element.
+///   .box-this {
+///       @include z-box-sizing;
+///   }
+/// @output
+///   ```scss
+///   .box-this {
+///       box-sizing: border-box;
+///   }
+///   ```
 @mixin z-box-sizing {
     box-sizing: border-box;
 }

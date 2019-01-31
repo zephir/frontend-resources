@@ -1,3 +1,18 @@
+/// Adds properties to improve text rendering in browsers.
+/// @author Marc
+/// @example scss
+///   body {
+///       @include z-better-text-rendering;
+///   }
+/// @output
+///   ```scss
+///   body {
+///       font-smoothing: antialiased;
+///       text-rendering: optimizeLegibility;
+///       text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+///   }
+///   ```
+///  
 @mixin z-better-text-rendering {
     font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
