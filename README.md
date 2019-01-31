@@ -21,33 +21,14 @@ Usage:
 
 ## SCSS
 
-Variables
+See https://zephir.github.io/frontend-resources.
 
-|Variable|Description|Example|
-|--------|-----------|------|
-|`$z-root-font-size`|Base font size. Used to calculate rem.||
-|`$z-breakpoints`|Will be used in the mediaquery mixins. For example `z-media-up(tapo)`.|`$z-breakpoints: (tapo: 768px, taho: 1024px, desk: 1920px) !default;`
+### Docs
 
+All informations are documented inline on top of mixins, functions and variables.  
+To compile the docs locally use the sassdoc node application (http://sassdoc.com/getting-started/).
 
-Functions
-
-|Function|Description|Example|
-|--------|-----------|------|
-|`z-rem`|Returns the calculated rem value based on the given pixel value and the `$z-root-font-size`. The mixin that's provided also adds a pixel fallback if used. The mixin can handle multiple values, for example `z-rem(20px 0 0 0, 'margin')` |Adds a `z-rem(20px)` function and a mixin `@include z-rem(20px)`. |
-|`z-em`|Returns the calculated em value based on given pixel value and parent font size. If no parent font size is given it uses the `$z-root-font-size` variable.|Adds a `z-em(20px, 24px)` function.|
-|`z-strip-unit`|strips a given unit (for example px) from a value.|`z-strip-unit(20px)`|
-|`z-xdem-to-rem`|function can calculate the rem value based on EM values given by XD. This function is especially useful if you have to define letter spacing that was defined in a XD file. The first param equals the letter spacing in XD and the second parameter has to be the current font-size in px.|`z-xdem-to-rem(20, 20px)`|
-
-
-Mixins
-
-|Mixin|Description|Example
-|--------|-----------|------
-|`z-media-up`|Adds the mediaquery mixins. These will use the `$z-breakpoints` map but can also accept regular pixel values.||
-|`z-media-down`|Adds the mediaquery mixins. These will use the `$z-breakpoints` map but can also accept regular pixel values.||
-|`z-media-between`|Adds the mediaquery mixins. These will use the `$z-breakpoints` map but can also accept regular pixel values.||
-|`z-better-text-rendering`|Include this in your body for better/smoother font rendering.|`@include z-better-text-rendering;`|
-|`z-clearfix`|Include this to clear floats and prevent following elements to flow around the previous floating element.|`@include z-clearfix;`|
+The gh-pages branch can be updated with sassdocify (http://sassdoc.com/sassdocify/).
 
 ## Normalize
 
