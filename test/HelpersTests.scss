@@ -122,3 +122,41 @@
         );
     }
 }
+
+// ==================================================
+// Escape number
+// ==================================================
+
+@include test-module('z-escape-number [function]') {
+    @include test('Escape number 333 so it can be used as a class name.') {
+        @include assert-equal(
+            z-escape-number(333),
+            \33 33
+        );
+    }
+}
+
+// ==================================================
+// Invert value
+// ==================================================
+
+@include test-module('z-invert-value [function]') {
+    @include test('Invert 20 to -20.') {
+        @include assert-equal(
+            z-invert-value(20),
+            -20
+        );
+    }
+    @include test('Invert 20px 20px 20px 20px to -20px -20px -20px -20px.') {
+        @include assert-equal(
+            z-invert-value(20px 20px 20px 20px),
+            -20px -20px -20px -20px
+        );
+    }
+    @include test('Invert -5px to 5px.') {
+        @include assert-equal(
+            z-invert-value(-5px),
+            5px
+        );
+    }
+}
