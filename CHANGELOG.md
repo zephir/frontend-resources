@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.0.3 (04. February 2019)
+
++ Added `webkit prefix` to `font-smoothing` in `z-better-text-rendering`.
+
 ## 2.0.2 (31. January 2019)
 
 + Added sassdoc comments (http://zephir.github.io/frontend-resources)
