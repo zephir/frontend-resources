@@ -22,7 +22,7 @@
         $breakpoint: map_get($z-breakpoints, $breakpoint);
     }
 
-    @media (max-width: z-em($breakpoint - 1)) {
+    @media (max-width: z-em($breakpoint - .05)) {
         @content;
     }
 }

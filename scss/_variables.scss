@@ -6,7 +6,11 @@ $z-root-font-size: 16px !default;
 /// Use px to specify the window width for each breakpoint.
 /// @type map
 $z-breakpoints: (
-    tapo: 768px,  // Tablet-portrait
+    xs: 400px,
+    sm: 576px,
+    tapo: 768px, // Tablet-portrait
     taho: 1024px, // Tablet-horizontal
+    lg: 1200px,
+    xl: 1560px,
     desk: 1920px, // Desktop
 ) !default;

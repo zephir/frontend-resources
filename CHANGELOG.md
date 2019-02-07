@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.0.5 (in Progress)
+
+## 2.0.4 (07. February 2019)
+
++ Added new breakpoints
+
 ## 2.0.3 (04. February 2019)
 
 + Added `webkit prefix` to `font-smoothing` in `z-better-text-rendering`.
